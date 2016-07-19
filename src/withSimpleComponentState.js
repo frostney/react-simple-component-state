@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Store from './Store';
 
-const withSimpleComponentState = (Component, store) => {
-  const s = (typeof store === 'object') ? new Store(store) : store;
+const withSimpleComponentState = (Comp, store) => {
+  const s = (store instanceof Store) ? store : new Store(store);
 
   return class WrappedComponent extends Component {
     constructor(props) {
@@ -24,11 +24,11 @@ const withSimpleComponentState = (Component, store) => {
     render() {
       const passProps = {
         store: this.state.store,
-        trigger: s.trigger,
+        trigger: (...args) => s.trigger.apply(s, args),
         ...this.props,
       };
 
-      return (<Component {...passProps} />);
+      return <Comp {...passProps} />;
     }
   }
 };

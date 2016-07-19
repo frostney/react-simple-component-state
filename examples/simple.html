@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Simple</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.7.7/babel.min.js"></script>
+    <script src="https://npmcdn.com/react@15.2.1/dist/react.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.2.1/dist/react-dom.js"></script>
+    <script src="../dist/react-simple-component-state.umd.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script id="react-app" type="text/template">
+      const { withSimpleComponentState } = simpleComponentState;
+
+      const Clicks = ({ store, trigger }) => (
+        <div>
+          <div>Clicks: {store.clicks}</div>
+          <button onClick={() => trigger('clicks', store.clicks + 1)}>Click me!</button>
+        </div>
+      );
+
+      const ClicksHOC = withSimpleComponentState(Clicks, { clicks: 0 });
+
+      ReactDOM.render(<ClicksHOC />, document.getElementById('root'));
+    </script>
+    <script>
+      eval(Babel.transform(document.getElementById('react-app').innerHTML, {presets: ['es2015', 'react']}).code);
+    </script>
+  </body>
+</html>

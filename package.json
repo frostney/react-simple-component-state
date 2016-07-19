@@ -1,6 +1,6 @@
 {
   "name": "react-simple-component-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dead-simple component state with functional stateless React components",
   "main": "dist/react-simple-component-state.js",
   "jsnext:main": "dist/react-simple-component-state.es2015.js",
@@ -26,9 +26,10 @@
     "simple"
   ],
   "rollupBabelLibBundler": {
+    "moduleName": "simpleComponentState",
     "babel": {
       "presets": [
-        "es2015-loose-rollup",
+        "es2015-minimal-rollup",
         "react"
       ],
       "plugins": [
@@ -47,7 +48,8 @@
     "babel-eslint": "^6.1.2",
     "babel-plugin-transform-export-extensions": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-es2015-loose-rollup": "^7.0.0",
+    "babel-preset-es2015-minimal-rollup": "^2.0.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
     "babel-preset-react": "^6.11.1",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^9.0.1",

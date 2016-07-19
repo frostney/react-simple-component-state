@@ -1,5 +1,5 @@
 class Store {
-  constructor(initialValues) {
+  constructor(initialValues = {}) {
     this.values = initialValues;
 
     this.listeners = [];
@@ -18,7 +18,7 @@ class Store {
       })
     }
 
-    if (this.aliases[key]) {
+    if (Object.hasOwnProperty.call(this.aliases, key)) {
       this.aliases[key](value).then(data => {
         updateValues(key, data);
       });

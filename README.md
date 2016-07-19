@@ -14,7 +14,7 @@ import { withSimpleComponentState } from 'react-simple-component-state';
 const Clicks = ({ store, trigger }) => (
   <div>
     <div>Clicks: {store.clicks}</div>
-    <button onClick={() => trigger('clicks', store.clicks + 1)}>Click me!</div>
+    <button onClick={() => trigger('clicks', store.clicks + 1)}>Click me!</button>
   </div>
 );
 
@@ -34,7 +34,7 @@ const sharedStore = new Store({ clicks: 0 });
 const Clicks = ({ store, trigger }) => (
   <div>
     <div>Clicks: {store.clicks}</div>
-    <button onClick={() => trigger('clicks', store.clicks + 1)}>Click me!</div>
+    <button onClick={() => trigger('clicks', store.clicks + 1)}>Click me!</button>
   </div>
 );
 
@@ -80,17 +80,9 @@ withSimpleComponentState(FromTheServer, myStore);
 Since the store passed in as the second parameter only expects a certain interface, we could easily swap the default store with a custom one.
 
 ```javascript
-class CustomStore {
+class CustomStore extends Store {
   constructor(initialValues) {
-    this.values = initialValues;
-  }
-
-  trigger() {
-
-  }
-
-  onChange(fn) {
-
+    super(initialValues);
   }
 }
 
