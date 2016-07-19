@@ -1,0 +1,67 @@
+{
+  "name": "react-simple-component-state",
+  "version": "1.0.0",
+  "description": "Dead-simple component state with functional stateless React components",
+  "main": "dist/react-simple-component-state.js",
+  "jsnext:main": "dist/react-simple-component-state.es2015.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rimraf dist",
+    "build": "rollup-babel-lib-bundler src/index.js",
+    "prepublish": "in-publish && npm run build || not-in-publish",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frostney/react-simple-component-state.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "state",
+    "simple"
+  ],
+  "rollupBabelLibBundler": {
+    "babel": {
+      "presets": [
+        "es2015-loose-rollup",
+        "react"
+      ],
+      "plugins": [
+        "transform-export-extensions",
+        "transform-object-rest-spread"
+      ]
+    }
+  },
+  "author": "Johannes Stein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frostney/react-simple-component-state/issues"
+  },
+  "homepage": "https://github.com/frostney/react-simple-component-state#readme",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015-loose-rollup": "^7.0.0",
+    "babel-preset-react": "^6.11.1",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.11.0",
+    "eslint-plugin-jsx-a11y": "^1.2.3",
+    "eslint-plugin-react": "^5.2.2",
+    "in-publish": "^2.0.0",
+    "rimraf": "^2.5.3",
+    "rollup-babel-lib-bundler": "^3.0.1"
+  },
+  "dependencies": {
+    "react": "^15.2.1"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0"
+  }
+}
