@@ -18,6 +18,10 @@ class Store {
       })
     }
 
+    if (!Object.hasOwnProperty.call(this.values, key)) {
+      return;
+    }
+
     if (Object.hasOwnProperty.call(this.aliases, key)) {
       this.aliases[key](value).then(data => {
         updateValues(key, data);

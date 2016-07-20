@@ -1,6 +1,6 @@
 {
   "name": "react-simple-component-state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dead-simple component state with functional stateless React components",
   "main": "dist/react-simple-component-state.js",
   "jsnext:main": "dist/react-simple-component-state.es2015.js",
