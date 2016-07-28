@@ -1,6 +1,6 @@
 {
   "name": "react-simple-component-state",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dead-simple component state with functional stateless React components",
   "main": "dist/react-simple-component-state.js",
   "jsnext:main": "dist/react-simple-component-state.es2015.js",
@@ -58,7 +58,7 @@
     "eslint-plugin-react": "^5.2.2",
     "in-publish": "^2.0.0",
     "rimraf": "^2.5.3",
-    "rollup-babel-lib-bundler": "^3.0.1"
+    "rollup-babel-lib-bundler": "^3.0.2"
   },
   "dependencies": {
     "react": "^15.2.1"
