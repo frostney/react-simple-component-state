@@ -1,4 +1,7 @@
 # react-simple-component-state
+
+**This project is deprecated. React Hooks provide a more elegant way to solve the issue this library was trying to solve originally**
+
 Dead-simple component state with functional stateless React components
 
 ## Installation
